@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: DirectLoanFixedOfferRedeploy
@@ -17,8 +17,9 @@ dataSources:
         - LoanStarted
       abis:
         - name: DirectLoanFixedOfferRedeploy
-          file: ./abis/DirectLoanFixedOfferRedeploy.json
+          file: DirectLoanFixedOfferRedeploy/abis/DirectLoanFixedOfferRedeploy.json
       eventHandlers:
-        - event: LoanStarted(indexed uint32,indexed address,indexed address,(uint256,uint256,uint256,address,uint32,uint16,uint16,address,uint64,address,address),(address,uint16,uint16))
+        - event: LoanStarted(indexed uint32,indexed address,indexed
+            address,(uint256,uint256,uint256,address,uint32,uint16,uint16,address,uint64,address,address),(address,uint16,uint16))
           handler: handleLoanStarted
-      file: ./src/direct-loan-fixed-offer-redeploy.ts
+      file: DirectLoanFixedOfferRedeploy/DirectLoanFixedOfferRedeploy.wasm
